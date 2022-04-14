@@ -1,0 +1,66 @@
+$color-black: rgb(0,0,0);
+$color-white: rgb(255,255,255);
+$color-gray-dark: rgb(77, 77, 77);
+$color-gray-dark2: rgb(152, 151, 151);
+$color-blue: rgb(25, 129, 255);
+$color-red: rgb(255, 45, 45);
+
+$color-gray-light: rgba($color-black, .15);
+
+:root {
+  --color-page-background: #{$color-gray-light};
+  --color-text: #{$color-black};
+  --color-colection: #{$color-white};
+  --color-team: #{$color-blue};
+}
+.dark {
+  --color-page-background: #{$color-gray-dark2};
+  --color-text: #{$color-white};
+  --color-colection: #{$color-gray-dark};
+  --color-team: #{$color-red};
+}
+
+* {
+  transition: all .2s ease;
+}
+
+body {
+  background-color: var(--color-page-background);
+  color: var(--color-text);
+}
+
+.collection{
+    border: 0px !important;
+    color: var(--color-text);
+}
+.collection-header {
+    background-color: var(--color-colection) !important;
+}
+.collection-item {
+    background-color: var(--color-colection) !important;
+    
+}
+nav {
+    background-color: var(--color-team);
+}
+.btn-floating {
+    background-color: var(--color-team);
+}
+
+.collection-item {
+    display: "flex";
+    flex-direction: "row";
+}
+
+.column {
+    float: left;
+}
+.left {
+    width: 20%;
+}
+.middle {
+    width: 30%;
+}
+.right {
+    width: 50%;
+}
