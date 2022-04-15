@@ -25,8 +25,8 @@ $color-gray-light: rgba($color-black, .15);
 }
 
 body {
-  background-color: var(--color-page-background);
-  color: var(--color-text);
+    background-color: var(--color-page-background);
+    color: var(--color-text);
 }
 
 .collection{
@@ -38,7 +38,8 @@ body {
 }
 .collection-item {
     background-color: var(--color-colection) !important;
-    
+    display: "flex";
+    flex-direction: "row";
 }
 nav {
     background-color: var(--color-team);
@@ -47,20 +48,44 @@ nav {
     background-color: var(--color-team);
 }
 
-.collection-item {
-    display: "flex";
-    flex-direction: "row";
-}
-
 .column {
+    color: var(--color-text);
     float: left;
+    column-count: 4;
+    height: 150px;
+}
+.column-text {
+    float: none;
+    display: "inline";
+    flex-direction: "column";
+}
+.sprite {
+    width: 20%;
 }
 .left {
     width: 20%;
 }
 .middle {
-    width: 30%;
+    display: block;
+    flex-direction: "column";
+    width: 20%;
+    
 }
 .right {
-    width: 50%;
+    width: 40%;
+}
+
+.header-NameTypes {
+    font-size: 20px;
+}
+
+.NameTypes {
+    font-size: 30px;
+}
+
+.preloader-light {
+    background-color: var(--color-colection);
+}
+.indeterminate {
+    background-color: var(--color-team) !important;
 }
