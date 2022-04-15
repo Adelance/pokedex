@@ -47,7 +47,9 @@ nav {
 .btn-floating {
     background-color: var(--color-team);
 }
-
+.btn {
+    background-color: var(--color-team);
+}
 .column {
     color: var(--color-text);
     float: left;
@@ -56,36 +58,24 @@ nav {
 }
 .column-text {
     float: none;
-    display: "inline";
-    flex-direction: "column";
+    display: flex;
+    flex-direction: column;
 }
 .sprite {
     width: 20%;
 }
 .left {
-    width: 20%;
+    width: 80%; 
 }
-.middle {
-    display: block;
-    flex-direction: "column";
-    width: 20%;
-    
+.texting{
+    color: var(--color-text);
 }
-.right {
-    width: 40%;
-}
-
-.header-NameTypes {
-    font-size: 20px;
-}
-
-.NameTypes {
-    font-size: 30px;
-}
-
 .preloader-light {
     background-color: var(--color-colection);
 }
 .indeterminate {
+    background-color: var(--color-team) !important;
+}
+footer{
     background-color: var(--color-team) !important;
 }
