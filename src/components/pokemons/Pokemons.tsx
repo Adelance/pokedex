@@ -46,7 +46,7 @@ const Pokemons = () => {
             <div className='center'> <img  src={Logo} alt="PokéDex"/> </div>
         </li>
         {
-             pokemonList.map((pokemon, index) => <li key={index}>{<PokemonItem pokemon={pokemon}/>}</li>)
+            pokemonList.map((pokemon, index) => <li key={index}>{<PokemonItem pokemon={pokemon}/>}</li>)
         } 
     </ul>
   

@@ -67,8 +67,8 @@ export const searchNamePokemons = (type: string) => async (dispatch: Dispatch) =
         })
     } catch(err) {
         dispatch({
-            type: POKEMONS_ERROR,
-            payload: err.response.data
+            type: GET_POKEMONS,
+            payload: []
         })
     }
 }

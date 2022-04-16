@@ -19,7 +19,6 @@ export default (state: appState = initialState, action: { type: string, payload:
                 pokemons: action.payload,
             }
         case POKEMONS_ERROR:
-            console.log(action.payload);
             return {
                 ...state,
                 error: action.payload
