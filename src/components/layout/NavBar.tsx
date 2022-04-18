@@ -20,7 +20,7 @@ const NavBar = () => {
       <div className="nav-wrapper">
           <form>
               <div className="input-field">
-              <input id="search" type="search" placeholder="Search Pokémon..." ref={text} onChange={onChange}/>
+              <input id="search" type="search" placeholder="Search Pokémon by name of type..." ref={text} onChange={onChange}/>
               <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
               <i className="material-icons">close</i>
               </div>
