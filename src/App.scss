@@ -1,5 +1,5 @@
-$color-black: rgb(0,0,0);
-$color-white: rgb(255,255,255);
+$color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
 $color-gray-dark: rgb(77, 77, 77);
 $color-gray-dark2: rgb(152, 151, 151);
 $color-blue: rgb(25, 129, 255);
@@ -8,20 +8,21 @@ $color-red: rgb(255, 45, 45);
 $color-gray-light: rgba($color-black, .15);
 
 :root {
-  --color-page-background: #{$color-gray-light};
-  --color-text: #{$color-black};
-  --color-colection: #{$color-white};
-  --color-team: #{$color-blue};
+    --color-page-background: #{$color-gray-light};
+    --color-text: #{$color-black};
+    --color-colection: #{$color-white};
+    --color-team: #{$color-blue};
 }
+
 .dark {
-  --color-page-background: #{$color-gray-dark2};
-  --color-text: #{$color-white};
-  --color-colection: #{$color-gray-dark};
-  --color-team: #{$color-red};
+    --color-page-background: #{$color-gray-dark2};
+    --color-text: #{$color-white};
+    --color-colection: #{$color-gray-dark};
+    --color-team: #{$color-red};
 }
 
 * {
-  transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 body {
@@ -29,53 +30,66 @@ body {
     color: var(--color-text);
 }
 
-.collection{
+.collection {
     border: 0px !important;
     color: var(--color-text);
 }
+
 .collection-header {
     background-color: var(--color-colection) !important;
 }
+
 .collection-item {
     background-color: var(--color-colection) !important;
     display: "flex";
     flex-direction: "row";
 }
+
 nav {
     background-color: var(--color-team);
 }
+
 .btn-floating {
     background-color: var(--color-team);
 }
+
 .btn {
     background-color: var(--color-team);
 }
+
 .column {
     color: var(--color-text);
     float: left;
     column-count: 4;
     height: 150px;
 }
+
 .column-text {
     float: none;
     display: flex;
     flex-direction: column;
 }
+
 .sprite {
     width: 20%;
 }
+
 .left {
-    width: 80%; 
+    width: 80%;
 }
-.texting{
+
+.texting {
     color: var(--color-text);
 }
+
 .preloader-light {
     background-color: var(--color-colection);
 }
+
 .indeterminate {
     background-color: var(--color-team) !important;
 }
-footer{
+
+footer {
     background-color: var(--color-team) !important;
 }
