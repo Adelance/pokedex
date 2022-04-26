@@ -1,7 +1,6 @@
-import { Key } from 'react';
 import { useSelector } from 'react-redux';
 
-const ViewPokemonModal = ({}) => {
+const ViewPokemonModal = () => {
     const allPokemons: any = useSelector((state) => state);
     const params = allPokemons.pokemon.current;
     let name = ' ',
