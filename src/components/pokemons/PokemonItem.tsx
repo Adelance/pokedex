@@ -6,7 +6,6 @@ const PokemonItem = ({ pokemon }: any) => {
     const capitalize = (str: string) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
     };
-
     return (
         <div className="collection-item">
             <a
@@ -17,7 +16,9 @@ const PokemonItem = ({ pokemon }: any) => {
                 <div className="flex-container">
                     <div>
                         <img
-                            src={pokemon.sprites.other.home.front_default}
+                            src={
+                                pokemon.sprites.other.dream_world.front_default
+                            }
                             width="150"
                             height="150"
                             alt="PokeDex"
