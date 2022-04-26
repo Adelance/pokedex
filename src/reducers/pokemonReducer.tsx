@@ -31,7 +31,7 @@ export default (
         case GET_NEXT_POKEMONS:
             return {
                 ...state,
-                allLoaded: [...state.pokemons, ...action.payload.results],
+                allLoaded: [...state.allLoaded, ...action.payload.results],
                 pokemons: [...state.pokemons, ...action.payload.results],
                 loadLink: action.payload.next,
             };
