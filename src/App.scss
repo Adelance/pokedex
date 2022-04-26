@@ -19,7 +19,6 @@ $color-gray-light: rgba($color-black, 0.15);
     --color-text: #{$color-white};
     --color-colection: #{$color-gray-dark};
     --color-team: #{$color-red};
-    overflow: inherit !important;
 }
 
 * {
@@ -29,6 +28,7 @@ $color-gray-light: rgba($color-black, 0.15);
 body {
     background-color: var(--color-page-background);
     color: var(--color-text);
+    overflow: inherit !important;
 }
 
 .collection {
@@ -42,8 +42,6 @@ body {
 
 .collection-item {
     background-color: var(--color-colection) !important;
-    display: 'flex';
-    flex-direction: 'row';
 }
 
 nav {
@@ -58,25 +56,13 @@ nav {
     background-color: var(--color-team);
 }
 
-.column {
-    color: var(--color-text);
-    float: left;
-    column-count: 4;
-    height: 150px;
+.flex-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.6fr;
 }
 
-.column-text {
-    float: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.sprite {
-    width: 20%;
-}
-
-.left {
-    width: 80%;
+.flex-container > div {
+    margin-right: 1em;
 }
 
 .texting {
