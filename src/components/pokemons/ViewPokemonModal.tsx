@@ -20,6 +20,8 @@ const ViewPokemonModal = () => {
 
 const modalStyle = {
     width: '75%',
-    height: '75%'
-  }
+    height: '75%',
+
+}
+
 export default ViewPokemonModal;

@@ -6,7 +6,7 @@ const PokemonItem = ({ pokemon }: any) => {
   const capitalize = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
-
+  
   return (
     <div className='collection-item row'>
 

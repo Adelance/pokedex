@@ -24,7 +24,6 @@ const DarkModeBtn = () => {
                 ) : (
                     <i className='material-icons'>light_mode</i>
                 )}
-
             </a>
         </div>
     )

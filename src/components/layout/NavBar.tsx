@@ -9,7 +9,7 @@ const NavBar = () => {
 
   const onChange = () => {
     if(text.current.value === ""){ 
-      getPokemons(0)(dispatch)
+      getPokemons()(dispatch)
     } else if (["normal", "fire", "water", "grass", "flying", "fighting", "poison", "electric", "ground", "rock", "psychic", "ice", "bug", "ghost", "steel", "dragon", "dark", "fairy"].indexOf(text.current.value.toLowerCase()) +1){
       searchPokemons(text.current.value.toLowerCase())(dispatch);
     } else searchNamePokemons(text.current.value.toLowerCase())(dispatch);

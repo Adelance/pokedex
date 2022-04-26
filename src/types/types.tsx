@@ -1,4 +1,5 @@
 export const GET_POKEMONS = 'GET_POKEMONS';
+export const GET_NEXT_POKEMONS = 'GET_NEXT_POKEMONS';
 export const POKEMONS_ERROR = 'POKEMONS_ERROR';
 export const SET_CURRENT = 'SET_CURRENT';
 

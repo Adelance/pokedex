@@ -19,6 +19,7 @@ $color-gray-light: rgba($color-black, .15);
     --color-text: #{$color-white};
     --color-colection: #{$color-gray-dark};
     --color-team: #{$color-red};
+    overflow: inherit !important;
 }
 
 * {
@@ -28,6 +29,7 @@ $color-gray-light: rgba($color-black, .15);
 body {
     background-color: var(--color-page-background);
     color: var(--color-text);
+  
 }
 
 .collection {
@@ -93,3 +95,4 @@ nav {
 footer {
     background-color: var(--color-team) !important;
 }
+
