@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const DarkModeBtn = () => {
     const [darkModeIcon, setDarkModeIcon] = useState(false);
@@ -8,6 +8,7 @@ const DarkModeBtn = () => {
             document.body.classList.toggle('dark');
             setDarkModeIcon(true);
         }
+        //eslint-disable-next-line
     }, []);
 
     const onClick = () => {
@@ -19,7 +20,7 @@ const DarkModeBtn = () => {
 
     return (
         <div className="fixed-action-btn">
-            <a className="btn-floating btn-large" onClick={onClick}>
+            <a className="btn-floating btn-large" href="/#" onClick={onClick}>
                 {darkModeIcon ? (
                     <i className="material-icons">dark_mode</i>
                 ) : (

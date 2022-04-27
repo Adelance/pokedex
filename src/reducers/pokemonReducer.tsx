@@ -15,7 +15,7 @@ const initialState = {
     current: {},
     error: null,
 };
-
+// eslint-disable-next-line
 export default (
     state: appState = initialState,
     action: { type: string; payload: any }
@@ -45,7 +45,7 @@ export default (
                             .map(
                                 (object: { type: { name: any } }) =>
                                     object.type.name
-                            )
+                            )// eslint-disable-next-line
                             .findIndex((type: string | string[]) => {
                                 if (type.includes(action.payload)) {
                                     return true;

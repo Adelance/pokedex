@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css';
 import NavBar from './components/layout/NavBar';
@@ -13,6 +13,7 @@ import './App.scss';
 const App = () => {
     useEffect(() => {
         M.AutoInit();
+        //eslint-disable-next-line
     }, []);
 
     return (
