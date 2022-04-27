@@ -43,9 +43,9 @@ const Pokemons = () => {
                 )}
             </ul>
             <div className="center">
+                {/* eslint-disable jsx-a11y/anchor-is-valid */}
                 <a
                     className="waves-effect waves-light btn"
-                    href="/#"
                     onClick={loadMore}
                 >
                     Load more
