@@ -43,7 +43,7 @@ const Pokemons = () => {
             </ul>
             <div className="center">
                 <a className="waves-effect waves-light btn" onClick={loadMore}>
-                    Load 20 more
+                    Load more
                 </a>
             </div>
         </div>
