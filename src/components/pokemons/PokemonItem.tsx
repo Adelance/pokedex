@@ -3,9 +3,6 @@ import { setCurrent } from '../../actions/pokemonActions';
 
 const PokemonItem = ({ pokemon }: any) => {
     const dispatch = useDispatch();
-    const capitalize = (str: string) => {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    };
     return (
         <div className="collection-item">
             <a
@@ -13,7 +10,7 @@ const PokemonItem = ({ pokemon }: any) => {
                 className="modal-trigger texting"
                 onClick={() => setCurrent(pokemon)(dispatch)}
             >
-                <div className="flex-container">
+                <div className="flex-container capitalize">
                     <div>
                         <img
                             src={
@@ -27,15 +24,13 @@ const PokemonItem = ({ pokemon }: any) => {
                     <div>
                         Name:
                         <div>
-                            <h3>{capitalize(pokemon.name)}</h3>
+                            <h3>{pokemon.name}</h3>
                         </div>
                     </div>
                     <div>
                         Types:
                         {pokemon.types.map((element: any, index: any) => (
-                            <div key={index}>
-                                {capitalize(element.type.name)}
-                            </div>
+                            <div key={index}>{element.type.name}</div>
                         ))}
                     </div>
                 </div>

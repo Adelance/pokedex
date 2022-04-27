@@ -59,7 +59,7 @@ nav {
 .flex-container {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.6fr;
-    border-bottom:  1px solid var(--color-team);
+    border-bottom: 1px solid var(--color-team);
 }
 .flex-container-modal {
     display: grid;
@@ -81,7 +81,9 @@ nav {
 .indeterminate {
     background-color: var(--color-team) !important;
 }
-
+.capitalize {
+    text-transform: capitalize;
+}
 footer {
     background-color: var(--color-team) !important;
 }

@@ -9,6 +9,7 @@ const Pokemons = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         getPokemons()(dispatch);
+        //eslint-disable-next-line
     }, []);
 
     const loadMore = () => {
@@ -42,7 +43,11 @@ const Pokemons = () => {
                 )}
             </ul>
             <div className="center">
-                <a className="waves-effect waves-light btn" onClick={loadMore}>
+                <a
+                    className="waves-effect waves-light btn"
+                    href="/#"
+                    onClick={loadMore}
+                >
                     Load more
                 </a>
             </div>
