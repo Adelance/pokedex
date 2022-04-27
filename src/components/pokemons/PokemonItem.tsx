@@ -24,13 +24,13 @@ const PokemonItem = ({ pokemon }: any) => {
                     <div>
                         Name:
                         <div>
-                            <h3>{pokemon.name}</h3>
+                            <h3 className='name'>{pokemon.name}</h3>
                         </div>
                     </div>
                     <div>
                         Types:
                         {pokemon.types.map((element: any, index: any) => (
-                            <div key={index}>{element.type.name}</div>
+                            <div key={index} className="types">{element.type.name}</div>
                         ))}
                     </div>
                 </div>
