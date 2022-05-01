@@ -1,7 +1,19 @@
 import { useSelector } from 'react-redux';
 
 const ViewPokemonModal = () => {
-    const allPokemons: any = useSelector((state) => state);
+    const allPokemons:
+        | any
+        | {
+              pokemon: {
+                  current: {
+                      name: string;
+                      sprites: { other: { home: { front_default: string } } };
+                      weight: number;
+                      height: number;
+                  };
+              };
+          } = useSelector((state) => state);
+    console.log(allPokemons);
     const params = allPokemons.pokemon.current;
     let sprite = '';
     if (params.name) {
@@ -32,8 +44,6 @@ const ViewPokemonModal = () => {
     );
 };
 
-const modalStyle = {
-   
-};
+const modalStyle = {};
 
 export default ViewPokemonModal;

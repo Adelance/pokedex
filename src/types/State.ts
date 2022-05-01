@@ -1,6 +1,6 @@
 export interface appState {
-    pokemons: any[];
-    allLoaded: any[];
+    allLoaded: object[];
+    filtered: string;
     loadLink: string;
     current: object;
     error: null;

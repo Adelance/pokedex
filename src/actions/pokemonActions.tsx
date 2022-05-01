@@ -4,7 +4,6 @@ import {
     POKEMONS_ERROR,
     SET_CURRENT,
     SEARCH_POKEMONS,
-    REMOVE_SEARCH,
 } from '../types/types';
 
 import { Dispatch } from 'redux';
@@ -14,8 +13,8 @@ export const getPokemons = () => async (dispatch: Dispatch) => {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon`);
         const data = await res.json();
         const promises: object[] = [];
-        // eslint-disable-next-line 
-        data.results.map((item: any) => {
+
+        data.results.forEach((item: any) => {
             promises.push(fetch(item.url).then((res) => res.json()));
         });
 
@@ -41,8 +40,7 @@ export const getNextPokemons = (link: string) => async (dispatch: Dispatch) => {
         const res = await fetch(link);
         const data = await res.json();
         const promises: object[] = [];
-        // eslint-disable-next-line
-        data.results.map((item: any) => {
+        data.results.forEach((item: any) => {
             promises.push(fetch(item.url).then((res) => res.json()));
         });
 
@@ -65,35 +63,18 @@ export const getNextPokemons = (link: string) => async (dispatch: Dispatch) => {
 
 export const searchPokemons =
     (searchText: string) => async (dispatch: Dispatch) => {
-        if (searchText.length === 0) {
-            searchEnd()(dispatch);
-        } else {
-            try {
-                dispatch({
-                    type: SEARCH_POKEMONS,
-                    payload: searchText,
-                });
-            } catch (err) {
-                dispatch({
-                    type: POKEMONS_ERROR,
-                    payload: err.response.data,
-                });
-            }
+        try {
+            dispatch({
+                type: SEARCH_POKEMONS,
+                payload: searchText,
+            });
+        } catch (err) {
+            dispatch({
+                type: POKEMONS_ERROR,
+                payload: err.response.data,
+            });
         }
     };
-
-const searchEnd = () => async (dispatch: Dispatch) => {
-    try {
-        dispatch({
-            type: REMOVE_SEARCH,
-        });
-    } catch (err) {
-        dispatch({
-            type: POKEMONS_ERROR,
-            payload: err.response.data,
-        });
-    }
-};
 
 export const setCurrent = (pokemon: any) => (dispatch: Dispatch) => {
     dispatch({

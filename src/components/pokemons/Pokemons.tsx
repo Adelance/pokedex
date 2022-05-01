@@ -17,10 +17,20 @@ const Pokemons = () => {
     };
 
     const allPokemons: any = useSelector((state) => state);
-
-    const pokemonList: object[] = allPokemons.pokemon.pokemons;
-
+    let pokemonList: object[] = allPokemons.pokemon.allLoaded;
     const loadLink: string = allPokemons.pokemon.loadLink;
+    const filtered: string = allPokemons.pokemon.filtered;
+    pokemonList = pokemonList.filter(
+        (pokemon: any) =>
+            pokemon.name.includes(filtered) ||
+            pokemon.types
+                .map((object: { type: { name: any } }) => object.type.name) // eslint-disable-next-line
+                .findIndex((type: string | string[]) => {
+                    if (type.includes(filtered)) {
+                        return true;
+                    }
+                }) + 1
+    );
 
     return (
         <div>
@@ -33,8 +43,11 @@ const Pokemons = () => {
                 </li>
                 {pokemonList.length === 0 ? (
                     <li className="center">
-                        <Preloader />
-                        Pokemons not found{' '}
+                        {allPokemons.pokemon.allLoaded.length === 0 ? (
+                            <Preloader />
+                        ) : (
+                            <span>Pokemons not found </span>
+                        )}
                     </li>
                 ) : (
                     pokemonList.map((pokemon, index) => (
@@ -44,10 +57,7 @@ const Pokemons = () => {
             </ul>
             <div className="center">
                 {/* eslint-disable jsx-a11y/anchor-is-valid */}
-                <a
-                    className="waves-effect waves-light btn"
-                    onClick={loadMore}
-                >
+                <a className="waves-effect waves-light btn" onClick={loadMore}>
                     Load more
                 </a>
             </div>

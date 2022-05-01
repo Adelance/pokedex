@@ -5,58 +5,37 @@ import {
     GET_NEXT_POKEMONS,
     SET_CURRENT,
     SEARCH_POKEMONS,
-    REMOVE_SEARCH,
 } from '../types/types';
 
 const initialState = {
-    pokemons: [],
     allLoaded: [],
+    filtered: '',
     loadLink: '',
     current: {},
     error: null,
 };
-// eslint-disable-next-line
-export default (
+
+const Reducer = (
     state: appState = initialState,
-    action: { type: string; payload: any }
+    action: { type: string; payload: { results: object[]; next: string } }
 ) => {
     switch (action.type) {
         case GET_POKEMONS:
             return {
                 ...state,
                 allLoaded: action.payload.results,
-                pokemons: action.payload.results,
                 loadLink: action.payload.next,
             };
         case GET_NEXT_POKEMONS:
             return {
                 ...state,
                 allLoaded: [...state.allLoaded, ...action.payload.results],
-                pokemons: [...state.pokemons, ...action.payload.results],
                 loadLink: action.payload.next,
             };
         case SEARCH_POKEMONS:
             return {
                 ...state,
-                pokemons: state.allLoaded.filter(
-                    (pokemon) =>
-                        pokemon.name.includes(action.payload) ||
-                        pokemon.types
-                            .map(
-                                (object: { type: { name: any } }) =>
-                                    object.type.name
-                            )// eslint-disable-next-line
-                            .findIndex((type: string | string[]) => {
-                                if (type.includes(action.payload)) {
-                                    return true;
-                                }
-                            }) + 1
-                ),
-            };
-        case REMOVE_SEARCH:
-            return {
-                ...state,
-                pokemons: state.allLoaded,
+                filtered: action.payload,
             };
         case POKEMONS_ERROR:
             return {
@@ -72,3 +51,4 @@ export default (
             return state;
     }
 };
+export default Reducer;
